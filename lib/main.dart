@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'InterestRateConverter.dart';
 
 void main(){
   runApp(
@@ -16,8 +17,25 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Financial Calc"),
+      ),
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.stretch,
+        children: <Widget>[
+          RaisedButton(
+            child: Text("Interest Rate Converter"),
+            padding: EdgeInsets.all(16),
+            onPressed: (){
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => InterestRateConverter())
+              );
+            },
+          ),
+        ],
+      ),
     );
   }
 }
