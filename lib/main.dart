@@ -1,3 +1,4 @@
+import 'package:financial_calc/InvestmentSimulator.dart';
 import 'package:flutter/material.dart';
 import 'InterestRateConverter.dart';
 
@@ -22,15 +23,28 @@ class _HomeState extends State<Home> {
         title: Text("Financial Calc"),
       ),
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: <Widget>[
           RaisedButton(
-            child: Text("Interest Rate Converter"),
+            color: Colors.blue,
+            child: Text("Interest Rate Converter",style: TextStyle(color: Colors.white)),
             padding: EdgeInsets.all(16),
             onPressed: (){
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => InterestRateConverter())
+              );
+            },
+          ),
+          RaisedButton(
+            color: Colors.blue,
+            child: Text("Investment Simulator",style: TextStyle(color: Colors.white)),
+            padding: EdgeInsets.all(16),
+            onPressed: (){
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => InvestmentSimulator())
               );
             },
           ),
